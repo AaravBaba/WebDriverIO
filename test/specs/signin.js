@@ -4,6 +4,8 @@ const { default: signinPage } = require("../pageobjects/signin.page");
 const { default: viewemployeelistPage } = require("../pageobjects/viewemployeelist.page");
 const { default: viewPersonalDetailsPage } = require("../pageobjects/viewPersonalDetails.page");
 var assert = require("assert");
+const { default: viewJobVacancyPage } = require("../pageobjects/viewJobVacancy.page");
+const { default: addJobVacancyPage } = require("../pageobjects/addJobVacancy.Page");
 describe("Login", () => {
     before(() => {
         signinPage.open();
@@ -11,7 +13,7 @@ describe("Login", () => {
     it("verify url", async () => {
 
         expect(signinPage.open).toHaveUrlContaining('opensource');
-        await browser.maximizeWindow()
+       
     })
     it("verify login", async () => {
         await signinPage.login("Admin", "admin123");
@@ -43,5 +45,6 @@ describe("Login", () => {
         await viewemployeelistPage.searchEmployee.click()
         await browser.pause(10000)
     })
+  
 
 })

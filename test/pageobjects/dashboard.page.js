@@ -7,8 +7,14 @@ class dashboardPage extends Page{
   get Admin(){
       return $('#menu_admin_viewAdminModule')
   }
+  get recruitement(){
+      return $('#menu_recruitment_viewRecruitmentModule')
+  }
   async clickPIM(){
       await this.PIM.click();
+  }
+  async clickRecruitement(){
+      await this.recruitement.click()
   }
 }
 export default new dashboardPage();
